@@ -97,16 +97,6 @@ loan-status-predictor/
 * Applicant Income
 * Loan Amount
 
----
-
-## 📚 Future Improvements
-
-* Add mobile-optimized form layout
-* Include more prediction features (credit history, dependents)
-* Use AJAX for seamless UX
-* Deploy to cloud (Render, Vercel, or Heroku)
-
----
 
 ## 💡 License
 
