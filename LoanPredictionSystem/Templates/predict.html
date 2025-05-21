@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan Status Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    select,
+    input[type="number"] {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ffffff10;
+      color: #fff;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    input:focus, select:focus {
+      background: #ffffff20;
+      outline: none;
+      box-shadow: 0 0 5px gold;
+    }
+
+    button {
+      padding: 14px;
+      background: #000;
+      color: gold;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #111;
+      box-shadow: 0 0 10px gold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Enter Applicant Details</h2>
+    <form action="result" method="GET">
+      {% csrf_token %}
+
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="married">Married</label>
+        <select name="married" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="education">Education</label>
+        <select name="education" required>
+          <option value="">Select</option>
+          <option value="Graduate">Graduate</option>
+          <option value="Not Graduate">Not Graduate</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="self_employed">Self Employed</label>
+        <select name="self_employed" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="income">Applicant Income</label>
+        <input type="number" name="applicant_income" step="any" required />
+      </div>
+
+      <div>
+        <label for="loan_amount">Loan Amount</label>
+        <input type="number" name="loan_amount" step="any" required />
+      </div>
+
+      <div style="text-align:center;">
+        <button type="submit">Predict Loan Status</button>
+      </div>
+    </form>
+    <div style="margin-top: 20px; text-align: center;">
+        <h2>{{ result2 }}</h2>
+    </div>
+  </div>
+</body>
+</html>

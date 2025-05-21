@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Prediction System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #283048, #859398);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 100px auto;
+      padding: 50px 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      margin-bottom: 15px;
+      color: #00e6e6;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #f0f0f0;
+    }
+
+    .tagline {
+      font-style: italic;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      color: #dcdcdc;
+      opacity: 0.85;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      background-color: #00e6e6;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    a.button:hover {
+      background-color: #00cccc;
+      transform: translateY(-2px);
+    }
+
+    .illustration {
+      margin-bottom: 30px;
+    }
+
+    .illustration img {
+      max-width: 120px;
+      animation: bounce 3s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .signature {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 16px;
+      color: #ffffff80;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      font-family: 'Brush Script MT', cursive;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="illustration">
+      <img src="https://cdn-icons-png.flaticon.com/512/3980/3980204.png" alt="Loan Icon">
+    </div>
+    <h1>Loan Prediction System</h1>
+    <p>Discover your loan approval chances instantly. Our intelligent ML-powered tool helps you predict approval based on financial inputs and eligibility criteria.</p>
+    <p class="tagline">“Empowering your financial future with data.”</p>
+    <a href="{% url 'predict' %}" class="button">Check Eligibility</a>
+  </div>
+
+  <div class="signature">Made with ❤️ by Shubham Sharma</div>
+
+</body>
+</html>
